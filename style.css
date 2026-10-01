@@ -108,8 +108,7 @@ button:focus-visible {
 
     letter-spacing: 0.02em;
 
-    transition:
-        color 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 
@@ -131,8 +130,7 @@ button:focus-visible {
 
     font-size: 0.95rem;
 
-    transition:
-        color 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 
@@ -284,9 +282,9 @@ button:focus-visible {
 ========================================================= */
 
 .hero {
-    min-height: 88svh;
-
     position: relative;
+
+    min-height: 88svh;
 
     display: flex;
     align-items: center;
@@ -303,8 +301,8 @@ button:focus-visible {
 
     background:
         radial-gradient(
-            circle at 90% 25%,
-            rgba(56, 189, 248, 0.14),
+            circle at 90% 15%,
+            rgba(56, 189, 248, 0.13),
             transparent 38%
         );
 
@@ -314,27 +312,10 @@ button:focus-visible {
 
 .hero-content {
     position: relative;
+
     z-index: 2;
 
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1fr)
-        320px;
-
-    align-items: center;
-
-    gap: 70px;
-}
-
-
-
-/* =========================================================
-   HERO TEXT
-========================================================= */
-
-.hero-text {
-    min-width: 0;
+    max-width: 1050px;
 }
 
 
@@ -384,75 +365,6 @@ button:focus-visible {
     font-size: 1.1rem;
 
     line-height: 1.75;
-}
-
-
-
-/* =========================================================
-   HERO PROFILE IMAGE
-========================================================= */
-
-.hero-image-wrapper {
-    width: 320px;
-    height: 320px;
-
-    position: relative;
-
-    justify-self: end;
-
-    flex-shrink: 0;
-
-    padding: 5px;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #38bdf8,
-            rgba(56, 189, 248, 0.15)
-        );
-
-    box-shadow:
-        0 25px 70px
-        rgba(0, 0, 0, 0.28),
-
-        0 0 45px
-        rgba(56, 189, 248, 0.08);
-}
-
-
-.hero-image-wrapper::before {
-    content: "";
-
-    position: absolute;
-
-    inset: -18px;
-
-    z-index: -1;
-
-    border-radius: 50%;
-
-    background:
-        rgba(56, 189, 248, 0.045);
-
-    filter: blur(6px);
-}
-
-
-.hero-image {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: center;
-
-    border-radius: 50%;
-
-    border:
-        5px solid #07111f;
 }
 
 
@@ -707,11 +619,9 @@ button:focus-visible {
     padding: 12px 4px;
 
     display: flex;
-
     flex-direction: column;
 
     align-items: flex-start;
-
     justify-content: flex-start;
 }
 
@@ -775,7 +685,6 @@ button:focus-visible {
     display: flex;
 
     align-items: flex-end;
-
     justify-content: flex-start;
 }
 
@@ -793,7 +702,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   PROJECT OVERVIEW IMAGES
+   PROJECTS OVERVIEW IMAGES
 ========================================================= */
 
 .projects-page .project-image {
@@ -836,7 +745,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   PROJECT IMAGE PLACEHOLDER
+   PROJECT IMAGE PLACEHOLDERS
 ========================================================= */
 
 .project-image-placeholder {
@@ -1023,7 +932,6 @@ button:focus-visible {
 
 .contact-box {
     width: 100%;
-
     max-width: 1100px;
 
     margin: 0 auto;
@@ -1074,8 +982,7 @@ button:focus-visible {
 .contact-email a {
     color: #a9b8c9;
 
-    transition:
-        color 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 
@@ -1083,6 +990,11 @@ button:focus-visible {
     color: #38bdf8;
 }
 
+
+
+/* =========================================================
+   PROJECT DETAIL PAGES
+========================================================= */
 
 
 /* =========================================================
@@ -1671,7 +1583,6 @@ button:focus-visible {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     flex-wrap: wrap;
@@ -1704,55 +1615,13 @@ footer {
 
 
 /* =========================================================
-   LARGE TABLET
-========================================================= */
-
-@media (max-width: 1050px) {
-
-    .hero-content {
-        grid-template-columns:
-            minmax(0, 1fr)
-            280px;
-
-        gap: 50px;
-    }
-
-
-    .hero-image-wrapper {
-        width: 280px;
-        height: 280px;
-    }
-
-}
-
-
-
-/* =========================================================
    TABLET
 ========================================================= */
 
 @media (max-width: 950px) {
 
 
-    /* HERO */
-
-    .hero-content {
-        grid-template-columns:
-            minmax(0, 1fr)
-            240px;
-
-        gap: 38px;
-    }
-
-
-    .hero-image-wrapper {
-        width: 240px;
-        height: 240px;
-    }
-
-
-
-    /* PROJECT PAGE */
+    /* PROJECTS PAGE */
 
     .projects-page .project-card {
         grid-template-columns: 1fr;
@@ -1846,18 +1715,7 @@ footer {
     /* HERO */
 
     .hero {
-        min-height: auto;
-
-        padding:
-            80px 0
-            75px;
-    }
-
-
-    .hero-content {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
+        min-height: 80svh;
     }
 
 
@@ -1867,16 +1725,8 @@ footer {
     }
 
 
-    .hero-image-wrapper {
-        width: 240px;
-        height: 240px;
 
-        justify-self: center;
-    }
-
-
-
-    /* GENERAL */
+    /* GENERAL SECTIONS */
 
     .section {
         padding: 75px 0;
@@ -2079,14 +1929,7 @@ footer {
     /* HOMEPAGE HERO */
 
     .hero {
-        padding:
-            65px 0
-            65px;
-    }
-
-
-    .hero-content {
-        gap: 38px;
+        min-height: 76svh;
     }
 
 
@@ -2110,12 +1953,6 @@ footer {
         font-size: 0.75rem;
 
         line-height: 1.6;
-    }
-
-
-    .hero-image-wrapper {
-        width: 210px;
-        height: 210px;
     }
 
 
@@ -2283,7 +2120,7 @@ footer {
 
 
 
-    /* PROJECT DETAIL IMAGE */
+    /* DETAIL IMAGE */
 
     .project-detail-main-image {
         aspect-ratio: 4 / 3;
@@ -2293,7 +2130,7 @@ footer {
 
 
 
-    /* PROJECT DETAIL CONTENT */
+    /* DETAIL CONTENT */
 
     .project-detail-section {
         padding: 48px 0;
