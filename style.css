@@ -99,6 +99,8 @@ button:focus-visible {
 
 
 .logo {
+    flex-shrink: 0;
+
     color: #e7edf5;
 
     font-size: 1.3rem;
@@ -124,8 +126,6 @@ button:focus-visible {
 
 
 .nav-links a {
-    position: relative;
-
     color: #b8c4d6;
 
     font-size: 0.95rem;
@@ -141,102 +141,14 @@ button:focus-visible {
 
 
 /* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    min-height: 88svh;
-
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    overflow: hidden;
-}
-
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 90% 15%,
-            rgba(56, 189, 248, 0.13),
-            transparent 38%
-        );
-
-    pointer-events: none;
-}
-
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-
-    max-width: 1050px;
-}
-
-
-.eyebrow {
-    margin-bottom: 18px;
-
-    color: #38bdf8;
-
-    font-size: 0.85rem;
-    font-weight: 600;
-
-    letter-spacing: 0.12em;
-
-    text-transform: uppercase;
-}
-
-
-.hero h1 {
-    margin-bottom: 20px;
-
-    font-size:
-        clamp(3rem, 6vw, 5.5rem);
-
-    line-height: 1;
-
-    letter-spacing: -0.04em;
-}
-
-
-.hero h2 {
-    margin-bottom: 24px;
-
-    color: #a9bad0;
-
-    font-size:
-        clamp(1.2rem, 3vw, 2rem);
-
-    font-weight: 500;
-}
-
-
-.hero-description {
-    max-width: 65ch;
-
-    color: #aab8ca;
-
-    font-size: 1.1rem;
-
-    line-height: 1.75;
-}
-
-
-
-/* =========================================================
    BUTTONS
 ========================================================= */
 
 .btn {
-    display: inline-block;
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
 
     padding: 12px 22px;
 
@@ -267,7 +179,8 @@ button:focus-visible {
     transform: translateY(-2px);
 
     box-shadow:
-        0 10px 25px rgba(56, 189, 248, 0.15);
+        0 10px 28px
+        rgba(56, 189, 248, 0.15);
 }
 
 
@@ -348,7 +261,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   ACTION BUTTONS
+   SECTION ACTIONS
 ========================================================= */
 
 .section-actions {
@@ -358,8 +271,100 @@ button:focus-visible {
 
     display: flex;
 
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+/* =========================================================
+   HOMEPAGE HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 88svh;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(56, 189, 248, 0.13),
+            transparent 38%
+        );
+
+    pointer-events: none;
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1050px;
+}
+
+
+.eyebrow {
+    margin-bottom: 18px;
+
+    color: #38bdf8;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+.hero h1 {
+    margin-bottom: 20px;
+
+    font-size:
+        clamp(3rem, 6vw, 5.5rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+
+.hero h2 {
+    margin-bottom: 24px;
+
+    color: #a9bad0;
+
+    font-size:
+        clamp(1.2rem, 3vw, 2rem);
+
+    font-weight: 500;
+}
+
+
+.hero-description {
+    max-width: 65ch;
+
+    color: #aab8ca;
+
+    font-size: 1.1rem;
+
+    line-height: 1.75;
 }
 
 
@@ -424,6 +429,39 @@ button:focus-visible {
 
 
 /* =========================================================
+   TAGS
+========================================================= */
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.tag {
+    padding: 6px 11px;
+
+    background:
+        rgba(56, 189, 248, 0.1);
+
+    color: #7dd3fc;
+
+    border:
+        1px solid rgba(56, 189, 248, 0.06);
+
+    border-radius: 999px;
+
+    font-size: 0.8rem;
+
+    line-height: 1.4;
+}
+
+
+
+/* =========================================================
    HOMEPAGE PROJECT CARDS
 ========================================================= */
 
@@ -461,7 +499,8 @@ button:focus-visible {
         rgba(56, 189, 248, 0.4);
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.16);
+        0 18px 45px
+        rgba(0, 0, 0, 0.15);
 }
 
 
@@ -497,40 +536,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   TAGS
-========================================================= */
-
-.tags {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 8px;
-}
-
-
-.tag {
-    padding: 6px 11px;
-
-    background:
-        rgba(56, 189, 248, 0.1);
-
-    color: #7dd3fc;
-
-    border:
-        1px solid rgba(56, 189, 248, 0.08);
-
-    border-radius: 999px;
-
-    font-size: 0.8rem;
-
-    line-height: 1.4;
-}
-
-
-
-/* =========================================================
-   PROJECTS PAGE
+   PROJECTS OVERVIEW PAGE
 ========================================================= */
 
 .projects-page {
@@ -548,21 +554,21 @@ button:focus-visible {
 
     flex-direction: column;
 
-    gap: 36px;
+    gap: 38px;
 }
 
 
 
 /* =========================================================
-   PROJECTS PAGE CARDS
+   PROJECTS OVERVIEW CARDS
 ========================================================= */
 
 .projects-page .project-card {
     width: 100%;
 
-    min-height: 360px;
+    min-height: 390px;
 
-    padding: 34px;
+    padding: 38px;
 
     display: grid;
 
@@ -570,7 +576,7 @@ button:focus-visible {
         minmax(0, 1.05fr)
         minmax(360px, 0.95fr);
 
-    gap: 42px;
+    gap: 44px;
 
     align-items: stretch;
 
@@ -604,17 +610,19 @@ button:focus-visible {
 
 
 /* =========================================================
-   PROJECTS PAGE TEXT
+   PROJECTS OVERVIEW TEXT
 ========================================================= */
 
 .projects-page .project-text {
-    padding: 14px 4px;
+    height: 100%;
+
+    padding: 12px 4px;
 
     display: flex;
-
     flex-direction: column;
 
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 
@@ -626,7 +634,7 @@ button:focus-visible {
     font-size: 0.9rem;
     font-weight: 700;
 
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
 }
 
 
@@ -657,33 +665,51 @@ button:focus-visible {
 }
 
 
+.projects-page .project-text .tags {
+    width: 100%;
+}
+
+
 
 /* =========================================================
-   PROJECT CARD ACTION
+   PROJECT VIEW DETAILS BUTTON
 ========================================================= */
 
 .project-card-action {
-    margin-top: 28px;
+    width: 100%;
+
+    margin-top: auto;
+
+    padding-top: 30px;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: flex-start;
 }
 
 
 .projects-page .project-card-action .btn {
+    min-width: 145px;
+
     padding: 11px 20px;
 
     font-size: 0.92rem;
+
+    text-align: center;
 }
 
 
 
 /* =========================================================
-   PROJECT IMAGES
+   PROJECTS OVERVIEW IMAGES
 ========================================================= */
 
 .projects-page .project-image {
     width: 100%;
     height: 100%;
 
-    min-height: 290px;
+    min-height: 310px;
 
     overflow: hidden;
 
@@ -700,7 +726,7 @@ button:focus-visible {
     width: 100%;
     height: 100%;
 
-    min-height: 290px;
+    min-height: 310px;
 
     object-fit: cover;
     object-position: center;
@@ -719,7 +745,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   PROJECT IMAGE PLACEHOLDER
+   PROJECT IMAGE PLACEHOLDERS
 ========================================================= */
 
 .project-image-placeholder {
@@ -729,6 +755,11 @@ button:focus-visible {
     justify-content: center;
 
     background:
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(56, 189, 248, 0.06),
+            transparent 40%
+        ),
         linear-gradient(
             135deg,
             #0a1726,
@@ -738,11 +769,16 @@ button:focus-visible {
 
 
 .project-image-placeholder span {
+    padding: 20px;
+
     color: #587089;
 
     font-size: 0.82rem;
+    font-weight: 600;
 
     letter-spacing: 0.12em;
+
+    text-align: center;
 
     text-transform: uppercase;
 }
@@ -799,7 +835,8 @@ button:focus-visible {
         rgba(56, 189, 248, 0.4);
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.14);
+        0 18px 45px
+        rgba(0, 0, 0, 0.14);
 }
 
 
@@ -858,7 +895,8 @@ button:focus-visible {
         rgba(56, 189, 248, 0.35);
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.13);
+        0 15px 40px
+        rgba(0, 0, 0, 0.13);
 }
 
 
@@ -894,7 +932,6 @@ button:focus-visible {
 
 .contact-box {
     width: 100%;
-
     max-width: 1100px;
 
     margin: 0 auto;
@@ -945,8 +982,7 @@ button:focus-visible {
 .contact-email a {
     color: #a9b8c9;
 
-    transition:
-        color 0.25s ease;
+    transition: color 0.25s ease;
 }
 
 
@@ -1076,8 +1112,7 @@ button:focus-visible {
 .project-detail-main-image {
     width: 100%;
 
-    min-height: 500px;
-    max-height: 680px;
+    aspect-ratio: 16 / 9;
 
     overflow: hidden;
 
@@ -1089,16 +1124,14 @@ button:focus-visible {
     border-radius: 22px;
 
     box-shadow:
-        0 25px 70px rgba(0, 0, 0, 0.18);
+        0 25px 70px
+        rgba(0, 0, 0, 0.18);
 }
 
 
 .project-detail-main-image img {
     width: 100%;
     height: 100%;
-
-    min-height: 500px;
-    max-height: 680px;
 
     object-fit: cover;
     object-position: center;
@@ -1131,6 +1164,8 @@ button:focus-visible {
 
 
 .project-detail-placeholder span {
+    padding: 20px;
+
     color: #59718b;
 
     font-size: 0.85rem;
@@ -1233,7 +1268,8 @@ button:focus-visible {
     border-left:
         3px solid rgba(56, 189, 248, 0.65);
 
-    border-radius: 0 10px 10px 0;
+    border-radius:
+        0 10px 10px 0;
 
     color: #8ea5bb !important;
 
@@ -1282,7 +1318,8 @@ button:focus-visible {
         rgba(56, 189, 248, 0.32);
 
     box-shadow:
-        0 18px 45px rgba(0, 0, 0, 0.13);
+        0 18px 45px
+        rgba(0, 0, 0, 0.13);
 }
 
 
@@ -1340,8 +1377,8 @@ button:focus-visible {
     text-align: center;
 
     transition:
-        border-color 0.25s ease,
-        background 0.25s ease;
+        background 0.25s ease,
+        border-color 0.25s ease;
 }
 
 
@@ -1381,8 +1418,6 @@ button:focus-visible {
 
 
 .development-step {
-    position: relative;
-
     padding: 26px;
 
     background: #0d1b2d;
@@ -1394,7 +1429,8 @@ button:focus-visible {
 
     transition:
         transform 0.3s ease,
-        border-color 0.3s ease;
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
@@ -1403,6 +1439,10 @@ button:focus-visible {
 
     border-color:
         rgba(56, 189, 248, 0.3);
+
+    box-shadow:
+        0 16px 40px
+        rgba(0, 0, 0, 0.12);
 }
 
 
@@ -1519,7 +1559,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   PROJECT DETAIL TECHNOLOGY TAGS
+   PROJECT DETAIL TAGS
 ========================================================= */
 
 .project-detail-section .tags {
@@ -1536,7 +1576,7 @@ button:focus-visible {
 
 
 /* =========================================================
-   PROJECT NAVIGATION
+   PROJECT DETAIL NAVIGATION
 ========================================================= */
 
 .project-navigation {
@@ -1615,25 +1655,24 @@ footer {
     }
 
 
+    .projects-page .project-text {
+        height: auto;
+    }
+
+
+    .project-card-action {
+        margin-top: 0;
+
+        padding-top: 28px;
+    }
+
+
 
     /* SKILLS */
 
     .skill-groups {
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
-    }
-
-
-
-    /* PROJECT DETAIL */
-
-    .project-detail-main-image {
-        min-height: 430px;
-    }
-
-
-    .project-detail-main-image img {
-        min-height: 430px;
     }
 
 }
@@ -1673,7 +1712,7 @@ footer {
 
 
 
-    /* HOMEPAGE HERO */
+    /* HERO */
 
     .hero {
         min-height: 80svh;
@@ -1687,7 +1726,7 @@ footer {
 
 
 
-    /* GENERAL */
+    /* GENERAL SECTIONS */
 
     .section {
         padding: 75px 0;
@@ -1782,19 +1821,12 @@ footer {
 
 
     .project-detail-main-image {
-        min-height: 360px;
-
         border-radius: 18px;
     }
 
 
-    .project-detail-main-image img {
-        min-height: 360px;
-    }
 
-
-
-    /* PROJECT DETAIL SECTIONS */
+    /* PROJECT DETAIL CONTENT */
 
     .project-detail-section {
         padding: 58px 0;
@@ -1813,7 +1845,7 @@ footer {
 
 
 
-    /* PROJECT DETAIL GRIDS */
+    /* DETAIL GRIDS */
 
     .project-detail-grid,
     .development-steps {
@@ -1822,7 +1854,7 @@ footer {
 
 
 
-    /* PROJECT GALLERY */
+    /* GALLERY */
 
     .project-gallery {
         grid-template-columns: 1fr;
@@ -1831,7 +1863,7 @@ footer {
 
     .project-gallery-item,
     .project-gallery-item img {
-        min-height: 360px;
+        min-height: 340px;
     }
 
 }
@@ -1893,13 +1925,8 @@ footer {
     }
 
 
-    .logo {
-        flex-shrink: 0;
-    }
 
-
-
-    /* HERO */
+    /* HOMEPAGE HERO */
 
     .hero {
         min-height: 76svh;
@@ -1930,7 +1957,7 @@ footer {
 
 
 
-    /* SECTIONS */
+    /* GENERAL */
 
     .section-heading {
         margin-bottom: 38px;
@@ -1983,7 +2010,16 @@ footer {
 
 
     .project-card-action {
-        margin-top: 22px;
+        padding-top: 22px;
+    }
+
+
+    .projects-page .project-card-action .btn {
+        min-width: 140px;
+
+        padding: 11px 17px;
+
+        font-size: 0.88rem;
     }
 
 
@@ -2084,26 +2120,17 @@ footer {
 
 
 
-    /* PROJECT DETAIL IMAGE */
+    /* DETAIL IMAGE */
 
     .project-detail-main-image {
-        min-height: 250px;
-
-        max-height: none;
+        aspect-ratio: 4 / 3;
 
         border-radius: 14px;
     }
 
 
-    .project-detail-main-image img {
-        min-height: 250px;
 
-        max-height: none;
-    }
-
-
-
-    /* PROJECT DETAIL CONTENT */
+    /* DETAIL CONTENT */
 
     .project-detail-section {
         padding: 48px 0;
